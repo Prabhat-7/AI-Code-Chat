@@ -12,6 +12,7 @@ export default function Home() {
   const [solution, setSolution] = useState("");
   const [input, setInput] = useState("");
   const handleClick = async () => {
+    if (input == "") return;
     const response = await fetch("api/solution", {
       method: "POST",
       headers: {
