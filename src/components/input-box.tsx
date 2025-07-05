@@ -9,6 +9,10 @@ type InputProps = {
   handleClick: () => void;
 };
 
+const handleKeyDown=(event)=>{
+
+}
+
 export default function InputBox({ input, setInput, handleClick }: InputProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -19,6 +23,7 @@ export default function InputBox({ input, setInput, handleClick }: InputProps) {
         className="p-3 h-15 !text-lg"
         value={input}
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
       />
       <Button onClick={handleClick}>
         <p>Send</p>

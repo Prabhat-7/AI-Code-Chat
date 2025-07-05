@@ -1,16 +1,14 @@
 "use client";
 import AiMesage from "@/components/messeges/AiMesage";
-import Header from "@/components/header";
-import { ModeToggle } from "@/components/theme/toggle-button";
 import React, { useState } from "react";
 import HumanMessage from "@/components/messeges/HumanMessage";
-import { Button } from "@/components/ui/button";
+import { useChat } from "@ai-sdk/react";
 import InputBox from "@/components/input-box";
 
 export default function Home() {
+  const { messeges } = useChat();
   const [messeges, setMesseges] = useState<any[]>([]);
   const [solution, setSolution] = useState("");
-
   const [input, setInput] = useState("");
   const handleClick = async () => {
     if (input == "") return;
